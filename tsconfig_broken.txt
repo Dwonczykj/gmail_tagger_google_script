@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "outDir": "./js_src/",
+        "noImplicitAny": false,
+        "module": "es6",
+        "target": "es2019",
+        "lib": [
+            "esnext"
+        ],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "allowJs": false,
+        "skipLibCheck": true,
+        "types": [],
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/*"
+    ],
+    "exclude": [
+        "js_src/*",
+        "node_modules",
+        "./node_modules",
+        "./node_modules/*",
+        "./node_modules/@types/node/index.d.ts",
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "import { trainSVM } from '../../../src/ai/svm/svm_binary_classifier';"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "SyntaxError",
+                                "message": "Unexpected token 'export'",
+                                "stack": "/Users/joeyd/Documents/JoeyDCareer/GitHub/google_scripting/gmail_ai_labeller/src/ai/svm/svm_binary_classifier.js:13\nexport const isList = (A) => {\n^^^^^^\n\n    at Object.compileFunction (node:vm:352:18)\n    at wrapSafe (node:internal/modules/cjs/loader:1026:15)\n    at Module._compile (node:internal/modules/cjs/loader:1061:27)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1149:10)\n    at Module.load (node:internal/modules/cjs/loader:975:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function._._load (/Users/joeyd/.vscode/extensions/donjayamanne.typescript-notebook-2.0.6/out/extension/server/index.js:2:115372)\n    at Module.require (node:internal/modules/cjs/loader:999:19)\n    at require (node:internal/modules/cjs/helpers:102:18)\n    at <Cell 1> [1, 33]"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}

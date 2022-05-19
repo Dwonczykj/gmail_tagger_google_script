@@ -1,0 +1,318 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "The extension ships with the latest version of Plotly, making it unnecessary to install plotly.js."
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const { Plotly } = require('node-kernel');\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const data = [{\n    values: [19, 26, 55],\n    labels: ['Residential', 'Non-Residential', 'Utility'],\n    type: 'pie'\n}];\nconst layout = {\n    height: 400,\n    width: 500\n};\n// There is no HTML element named `myDiv`, hence the plot is displayed below.\nPlotly.newPlot('myDiv', data, layout);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x9ecbaff67b36438d9399948e396e44ae",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "values": [
+                                            19,
+                                            26,
+                                            55
+                                        ],
+                                        "labels": [
+                                            "Residential",
+                                            "Non-Residential",
+                                            "Utility"
+                                        ],
+                                        "type": "pie"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var data = [\n    {\n        x: [\"giraffes\", \"orangutans\", \"monkeys\"],\n        y: [20, 14, 23],\n        type: \"bar\"\n    }\n];\nconst layout = {\n    height: 400,\n    width: 500\n};\n// There is no HTML element named `myDiv`, hence the plot is displayed below.\nPlotly.newPlot('myDiv2', data, layout);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "xfbce483c94e945eea3e088bbf6ece32d",
+                                "type": "generatePlot",
+                                "ele": "myDiv2",
+                                "data": [
+                                    {
+                                        "x": [
+                                            "giraffes",
+                                            "orangutans",
+                                            "monkeys"
+                                        ],
+                                        "y": [
+                                            20,
+                                            14,
+                                            23
+                                        ],
+                                        "type": "bar"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var data = [\n    {\n        x: [1, 2, 3],\n        y: [20, 14, 23],\n        type: \"line\"\n    }\n];\nconst layout = {\n    height: 400,\n    width: 500\n};\n// There is no HTML element named `myDiv`, hence the plot is displayed below.\nPlotly.newPlot('myDivLine', data, layout);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "xcabbda96f8b64829abb3188f8a317b42",
+                                "type": "generatePlot",
+                                "ele": "myDivLine",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3
+                                        ],
+                                        "y": [
+                                            20,
+                                            14,
+                                            23
+                                        ],
+                                        "type": "line"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var trace1 = {\n    x: [1, 2, 3, 4],\n    y: [10, 15, 13, 17],\n    mode: 'markers',\n    type: 'scatter'\n};\n\nvar trace2 = {\n    x: [2, 3, 4, 5],\n    y: [16, 5, 11, 9],\n    mode: 'lines',\n    type: 'scatter'\n};\n\nvar trace3 = {\n    // x: [1, 2, 3, 4], // will default to [0, 1, 2, 3] if omitted\n    y: [12, 9, 15, 12],\n    mode: 'lines+markers',\n    type: 'scatter'\n};\n\nvar data = [trace1, trace2, trace3];\n\nPlotly.newPlot('myDiv', data);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x00aa97b11ed1421795731170cadf0ddb",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4
+                                        ],
+                                        "y": [
+                                            10,
+                                            15,
+                                            13,
+                                            17
+                                        ],
+                                        "mode": "markers",
+                                        "type": "scatter"
+                                    },
+                                    {
+                                        "x": [
+                                            2,
+                                            3,
+                                            4,
+                                            5
+                                        ],
+                                        "y": [
+                                            16,
+                                            5,
+                                            11,
+                                            9
+                                        ],
+                                        "mode": "lines",
+                                        "type": "scatter"
+                                    },
+                                    {
+                                        "y": [
+                                            12,
+                                            9,
+                                            15,
+                                            12
+                                        ],
+                                        "mode": "lines+markers",
+                                        "type": "scatter"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// https://plotly.com/javascript/line-and-scatter/#data-labels-on-the-plot\n\nvar trace1 = {\n    x: [1, 2, 3, 4, 5],\n    y: [1, 6, 3, 6, 1],\n    mode: 'markers+text',\n    type: 'scatter',\n    name: 'Team A',\n    text: ['A-1', 'A-2', 'A-3', 'A-4', 'A-5'],\n    textposition: 'top center',\n    textfont: {\n        family: 'Raleway, sans-serif'\n    },\n    marker: { size: 12 }\n};\n\nvar trace2 = {\n    x: [1.5, 2.5, 3.5, 4.5, 5.5],\n    y: [4, 1, 7, 1, 4],\n    mode: 'markers+text',\n    type: 'scatter',\n    name: 'Team B',\n    text: ['B-a', 'B-b', 'B-c', 'B-d', 'B-e'],\n    textfont: {\n        family: 'Times New Roman'\n    },\n    textposition: 'bottom center',\n    marker: { size: 12 }\n};\n\nvar data = [trace1, trace2];\n\nvar layout = {\n    xaxis: {\n        range: [0.75, 5.25]\n    },\n    yaxis: {\n        range: [0, 8]\n    },\n    legend: {\n        y: 0.5,\n        yref: 'paper',\n        font: {\n            family: 'Arial, sans-serif',\n            size: 20,\n            color: 'grey',\n        }\n    },\n    title: 'Data Labels on the Plot'\n};\n\nPlotly.newPlot('myDiv', data, layout);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "xf4526542ea334e90a108d04f278e8314",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5
+                                        ],
+                                        "y": [
+                                            1,
+                                            6,
+                                            3,
+                                            6,
+                                            1
+                                        ],
+                                        "mode": "markers+text",
+                                        "type": "scatter",
+                                        "name": "Team A",
+                                        "text": [
+                                            "A-1",
+                                            "A-2",
+                                            "A-3",
+                                            "A-4",
+                                            "A-5"
+                                        ],
+                                        "textposition": "top center",
+                                        "textfont": {
+                                            "family": "Raleway, sans-serif"
+                                        },
+                                        "marker": {
+                                            "size": 12
+                                        }
+                                    },
+                                    {
+                                        "x": [
+                                            1.5,
+                                            2.5,
+                                            3.5,
+                                            4.5,
+                                            5.5
+                                        ],
+                                        "y": [
+                                            4,
+                                            1,
+                                            7,
+                                            1,
+                                            4
+                                        ],
+                                        "mode": "markers+text",
+                                        "type": "scatter",
+                                        "name": "Team B",
+                                        "text": [
+                                            "B-a",
+                                            "B-b",
+                                            "B-c",
+                                            "B-d",
+                                            "B-e"
+                                        ],
+                                        "textfont": {
+                                            "family": "Times New Roman"
+                                        },
+                                        "textposition": "bottom center",
+                                        "marker": {
+                                            "size": 12
+                                        }
+                                    }
+                                ],
+                                "layout": {
+                                    "xaxis": {
+                                        "range": [
+                                            0.75,
+                                            5.25
+                                        ]
+                                    },
+                                    "yaxis": {
+                                        "range": [
+                                            0,
+                                            8
+                                        ]
+                                    },
+                                    "legend": {
+                                        "y": 0.5,
+                                        "yref": "paper",
+                                        "font": {
+                                            "family": "Arial, sans-serif",
+                                            "size": 20,
+                                            "color": "grey"
+                                        }
+                                    },
+                                    "title": "Data Labels on the Plot"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
