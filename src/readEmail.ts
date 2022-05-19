@@ -1,4 +1,4 @@
-import { saveThreadToSheetStorage } from './sheetRepoLayer';
+import { saveThreadsToJson, saveThreadToSheetStorage } from './sheetRepoLayer';
 
 export function isThreadProcessed(threadMsgs: GoogleAppsScript.Gmail.GmailMessage[]) {
   const key = 'joeyd filters';
@@ -21,7 +21,7 @@ export function getGmail(limitCount = 20) {
   }
 }
 
-export function readGmail(limitCount = 20) {
+export function readGmailToGSheets(limitCount = 20) {
   const threads = getGmail(limitCount);
   try {
     if (threads.length > 0) {
@@ -38,5 +38,14 @@ export function readGmail(limitCount = 20) {
     }
   } catch (e) {
     Logger.log(e.toString());
+  }
+}
+
+export const saveLastNEmailsToJsonLocal = (limitCount = 100) => {
+  const threads = getGmail(limitCount);
+  try {
+    saveThreadsToJson(threads);
+  } catch (error) {
+    Logger.log(error.toString());
   }
 }

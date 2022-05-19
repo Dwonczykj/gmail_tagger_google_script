@@ -1,4 +1,3 @@
-import * as fs from 'fs';
 
 
 export const saveThreadToSheetStorage = (emailFrom: string, emailSubject: string) => {
@@ -24,10 +23,29 @@ export const saveThreadsToJson = (threads: GoogleAppsScript.Gmail.GmailThread[])
   saveJsonObjFile(out, 'emails');
 }
 
-export const saveJsonObjFile = (jsonData, fileName) => {
-  fs.writeFile(fileName + ".json", jsonData, function (err) {
-    if (err) {
-      console.log(err);
-    }
-  });
+// export const saveJsonObjFile = (jsonData, fileName) => {
+//   fs.writeFile(fileName + ".json", jsonData, function (err) {
+//     if (err) {
+//       console.log(err);
+//     }
+//   });
+// }
+
+export const saveJsonObjFile = (data, filename = 'data') => {
+  /**
+   * Creates a file in the users Google Drive
+   */
+
+  if (!filename.endsWith('.json')) {
+    filename += '.json';
+  }
+
+  const fileSets = {
+    title: filename,
+    mimeType: 'application/json'
+  };
+
+  const blob = Utilities.newBlob(JSON.stringify(data), "application/vnd.google-apps.script+json");
+  const file = Drive.Files.insert(fileSets, blob);
+  Logger.log('ID: %s, File size (bytes): %s, type: %s', file.id, file.fileSize, file.mimeType);
 }

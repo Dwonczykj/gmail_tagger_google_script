@@ -11,7 +11,7 @@
     "format": "prettier --write dist/code.js",
     "postbuild": "npm run format",
     "upload": "npx clasp push --force",
-    "deploy": "npm run build && npm run upload && npm run redeploy",
+    "deploy": "npm run build && npm run upload && npm run redeploy && npx clasp open",
     "redeploy": "npx clasp deploy -i AKfycbzimK5wLsVItTZuzMZqU7cqSEXtcRadM7QszHdfbq-5W3FjXTXy9OsBBuAUGjf4XKra",
     "test": "jest",
     "tsc": "tsc"
